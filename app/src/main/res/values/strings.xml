@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Финансы</string>
+    <string name="bottom_sheet_peek">Свайпни ввверх!!!</string>
+    <string name="bottom_sheet_content">инфо можно разместить тут...</string>
+    <string name="transaction_title">Расход</string>
+    <string name="title_fingerprint">Приложите палец, чтобы войти в приложение</string>
+    <string name="editCategory">Описание</string>
+    <string name="editTitle">Категория</string>
+    <string name="editAmount">Сумма</string>
+    <string name="login_title">Авторизация</string>
+
+    <string name="totalSpent">Суммарно потрачено: </string>
+    <string name="totlaEarned">Суммарно получено: </string>
+</resources>

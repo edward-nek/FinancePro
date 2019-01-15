@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_fingerprint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:label="@string/login_title"
+    tools:context=".FingerprintActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/headerLayout"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginBottom="30dp"
+            android:paddingTop="2dp"
+            android:src="@drawable/fingerprint_icon_new" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/title_fingerprint"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary_green"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/errorText"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:id="@+id/errorText"
+            android:paddingEnd="30dp"
+            android:paddingStart="30dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
