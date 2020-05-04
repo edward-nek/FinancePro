@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:backgroundTint="@color/colorPrimaryDark">
+    android:backgroundTint="@color/backgroundCard">
 
 
     <android.support.constraint.ConstraintLayout
@@ -19,7 +19,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/textPrimary"
+            android:textColor="@color/textColor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/lorem" />
@@ -33,7 +33,7 @@
             android:layout_marginBottom="8dp"
             android:maxLines="3"
             android:text="test"
-            android:textColor="@color/blue"
+            android:textColor="@color/textColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -48,7 +48,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:text="TextView"
-            android:textColor="@color/textPrimary"
+            android:textColor="@color/colorAccent_green"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/btnDelete"
             app:layout_constraintHorizontal_bias="0.935"
@@ -61,7 +61,8 @@
             android:layout_width="93dp"
             android:layout_height="36dp"
             android:layout_marginEnd="8dp"
-            android:backgroundTint="@color/colorPrimary_green"
+            android:backgroundTint="@color/header"
+            android:textColor="@color/textHeader"
             android:text="Удалить"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"

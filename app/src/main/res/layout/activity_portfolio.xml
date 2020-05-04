@@ -4,14 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/windowBackground"
+    android:background="@color/background"
     android:orientation="vertical"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:paddingTop="40dp"
     tools:context=".Portfolio">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@android:color/white"
+        app:title="Портфель криптовалют"/>
+
     <Spinner
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="40dp"
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +34,10 @@
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_amount"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="40dp">
 
         <EditText
             android:id="@+id/editAmount"
@@ -31,22 +47,25 @@
             android:layout_marginBottom="8dp"
             android:hint="@string/editAmount"
             android:inputType="numberDecimal"
-            android:textColor="@color/colorPrimary_green"
+            android:textColor="@color/textColor"
             android:textColorHint="#000000" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="40dp">
 
         <Button
             android:id="@+id/buttonDone"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:backgroundTint="@color/header"
             android:text="Добавить"
-            android:textColor="@color/colorPrimary_green"
+            android:textColor="@color/textHeader"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -62,8 +81,11 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="16dp"
         android:scrollbars = "vertical"
-        android:textColor="@color/colorPrimary_green"
-        android:textSize="32sp"
-        tools:layout_editor_absoluteY="456dp" />
+        android:textColor="@color/textColor"
+        android:textSize="16dp"
+        tools:layout_editor_absoluteY="456dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="40dp"/>
 
 </LinearLayout>

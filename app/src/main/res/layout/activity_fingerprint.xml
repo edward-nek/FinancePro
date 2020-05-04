@@ -4,7 +4,7 @@
     android:id="@+id/activity_fingerprint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/windowBackground"
+    android:background="@color/header"
     android:label="@string/login_title"
     tools:context=".FingerprintActivity">
 
@@ -20,8 +20,8 @@
 
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginBottom="30dp"
             android:paddingTop="2dp"
             android:src="@drawable/fingerprint_icon_new" />
@@ -36,8 +36,8 @@
             android:layout_marginBottom="10dp"
             android:text="@string/title_fingerprint"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary_green"
-            android:textSize="20sp" />
+            android:textColor="@color/textHeader"
+            android:textSize="26sp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

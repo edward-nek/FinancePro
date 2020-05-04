@@ -16,9 +16,7 @@ public abstract class PostsDatabase extends RoomDatabase {
 
     private static PostsDatabase INSTANCE;
 
-    private final static List<Post> POSTS = Arrays.asList(
-            new Post("Здравствуйте!", "Добро пожаловать в Финансы!" , "666", "Доход")
-    );
+    private final static List<Post> POSTS = Arrays.asList();
 
     public abstract PostDao postDao();
 

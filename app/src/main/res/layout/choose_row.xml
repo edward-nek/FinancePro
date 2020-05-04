@@ -16,8 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:textColor="@color/colorPrimary_green"
-        android:textSize="20sp"
+        android:textColor="@color/textColor"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
-        android:textColor="@color/colorPrimaryDark_green"
-        android:textSize="16sp" />
+        android:textColor="@color/subtextColor"
+        android:textSize="14sp" />
 
 </RelativeLayout>

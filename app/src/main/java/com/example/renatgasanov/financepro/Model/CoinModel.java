@@ -1,10 +1,13 @@
 package com.example.renatgasanov.financepro.Model;
 
+
 public class CoinModel {
 
 
     public String id;
+
     public String name;
+
     public String symbol;
     public String price_usd;
     public String percent_change_1h;

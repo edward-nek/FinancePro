@@ -16,4 +16,14 @@
     <color name="textPrimary">#f5f5f5</color>
     <color name="textPrimaryDark">#95aab4</color>
 
+
+    <!-- new TextDesign-->
+    <color name="header">#FED824</color>
+    <color name="darkHeader">#8B7301</color>
+    <color name="textHeader">#99000000</color>
+    <color name="backgroundCard">#80FED824</color>
+    <color name="background">#40FED824</color>
+    <color name="textColor">#80000000</color>
+    <color name="subtextColor">#66000000</color>
+
 </resources>

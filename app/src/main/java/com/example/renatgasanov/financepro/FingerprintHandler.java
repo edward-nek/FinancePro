@@ -52,6 +52,8 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
         ((Activity) context).finish();
         Intent successAuth = new Intent(context, ChooseActivity.class);//todo choose first screen here
         context.startActivity(successAuth);
+        ((Activity) context).overridePendingTransition(0, 0);
+        ((Activity) context).finish();
     }
 
 

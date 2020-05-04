@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,10 +77,26 @@ public class CoinAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         //Load image
 
-        Picasso.with(activity)
-                .load(new StringBuilder("https://res.cloudinary.com/dxi90ksom/image/upload/")
-                        .append(item.getSymbol().toLowerCase()).append(".png").toString())
-                .into(holderitem.coin_icon);
+//        Picasso.with(activity)
+//                .load(new StringBuilder("https://res.cloudinary.com/dxi90ksom/image/upload/")
+//                        .append(item.getSymbol().toLowerCase()).append(".png").toString())
+//                .into(holderitem.coin_icon);
+
+
+        Log.d("ImageIcon", item.getSymbol().substring(1, item.getSymbol().length()-1).toLowerCase());
+        if (item.getSymbol().substring(1, item.getSymbol().length()-1).toString().toLowerCase().equals("bsv")){
+            Picasso.with(activity)
+                    .load((new StringBuilder("https://res.cloudinary.com/dxi90ksom/image/upload/btc.png") + "")).into(holderitem.coin_icon);
+
+            Log.d("ImageIcon", "THIS IS BSV");
+
+        }
+        else{
+            Picasso.with(activity)
+                    .load((new StringBuilder("https://res.cloudinary.com/dxi90ksom/image/upload/") + item.getSymbol().substring(1, item.getSymbol().length()-1).toLowerCase() + ".png")).into(holderitem.coin_icon);
+
+        }
+
 
         holderitem.one_hour_change.setTextColor(item.getPercent_change_24h().contains("-") ?
                 Color.parseColor("#ff0000") : Color.parseColor("#32cd32"));

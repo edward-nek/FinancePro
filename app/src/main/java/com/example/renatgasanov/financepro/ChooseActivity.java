@@ -13,21 +13,56 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/*
+    Класс ChooseActivity отвечает за отображение списка меню в Activity,
+    а также обработку элементов списка.
+*/
+
 public class ChooseActivity extends AppCompatActivity {
     private List<Choose> CL = new ArrayList<>();
     private ChooseAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //скрыть панель навигации начало
+
+        final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+
+        getWindow().getDecorView().setSystemUiVisibility(flags);
+
+        final View decorView = getWindow().getDecorView();
+        decorView
+                .setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener()
+                {
+
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility)
+                    {
+                        if((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0)
+                        {
+                            decorView.setSystemUiVisibility(flags);
+                        }
+                    }
+                });
+
+        //скрыть панель навигации конец
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
-        getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimaryDark));
-        getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.header));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.header));
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorPrimaryDark_green));
-        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary_green));
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.textHeader));
+        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.header));
 
         RecyclerView choose_objs = findViewById(R.id.choose);
         adapter = new ChooseAdapter(CL);
@@ -44,14 +79,20 @@ public class ChooseActivity extends AppCompatActivity {
                     case 0:
                         Intent transactions = new Intent(ChooseActivity.this, MainActivity.class);
                         startActivity(transactions);
+                        overridePendingTransition(0, 0);
+                        finish();
                         break;
                     case 1:
                         Intent tracker = new Intent(ChooseActivity.this, Tracker.class);
                         startActivity(tracker);
+                        overridePendingTransition(0, 0);
+                        finish();
                         break;
                     case 2:
                         Intent portfolio = new Intent(ChooseActivity.this, Portfolio.class);
                         startActivity(portfolio);
+                        overridePendingTransition(0, 0);
+                        finish();
                         break;
                 }
                 //todo new screens
@@ -74,9 +115,20 @@ public class ChooseActivity extends AppCompatActivity {
         choose = new Choose("Портфель криптовалют", "Просматривайте и добавляйте свои криптовалютные сбережения");
         CL.add(choose);
         adapter.notifyDataSetChanged();
-        choose = new Choose("Настройки", "Настройки программы");
-        CL.add(choose);
-        adapter.notifyDataSetChanged();
+    }
+
+    //отслеживание нажатий на экран
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus)
+    {
+        super.onWindowFocusChanged(hasFocus);
+        getWindow().getDecorView().setSystemUiVisibility( View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 }
 

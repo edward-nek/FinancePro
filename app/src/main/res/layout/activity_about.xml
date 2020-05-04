@@ -4,24 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/windowBackground"
+    android:background="@color/background"
     android:orientation="vertical"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:paddingTop="40dp"
     tools:context=".AboutActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Добавить транзакцию"
+        app:titleTextColor="@android:color/white" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="40dp" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_amount"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <EditText
             android:id="@+id/editAmount"
@@ -30,15 +45,18 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:hint="@string/editAmount"
-            android:inputType="number"
-            android:textColor="@color/colorPrimary_green"
+            android:maxLength="6"
+            android:inputType="numberDecimal"
+            android:textColor="@color/textColor"
             android:textColorHint="#000000" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <EditText
             android:id="@+id/editTitle"
@@ -47,15 +65,18 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:hint="@string/editTitle"
+            android:maxLength="10"
             android:inputType="textPersonName"
-            android:textColor="@color/colorPrimary_green"
+            android:textColor="@color/textColor"
             android:textColorHint="@color/textPrimary" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <EditText
             android:id="@+id/editCategory"
@@ -64,23 +85,26 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:hint="@string/editCategory"
+            android:maxLength="15"
             android:inputType="textPersonName"
-            android:textColor="@color/colorPrimary_green"
+            android:textColor="@color/textColor"
             android:textColorHint="@color/colorPrimaryDark_green" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <Button
             android:id="@+id/buttonDone"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:backgroundTint="@color/backgroundCard"
             android:text="Готово"
-            android:textColor="@color/colorPrimary_green"
+            android:textColor="@color/textColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Финансы</string>
+    <string name="app_name">Бумажник</string>
     <string name="bottom_sheet_peek">Свайпни ввверх!!!</string>
     <string name="bottom_sheet_content">инфо можно разместить тут...</string>
     <string name="transaction_title">Расход</string>

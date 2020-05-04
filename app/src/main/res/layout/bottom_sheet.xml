@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bottom_sheet"
     android:layout_width="match_parent"
-    android:layout_height="340dp"
-    android:background="@android:color/darker_gray"
+    android:layout_height="203dp"
+    android:background="@color/background"
     android:orientation="vertical"
     app:behavior_hideable="false"
     app:behavior_peekHeight="42dp"
@@ -13,14 +13,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="42dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/backgroundCard"
         android:gravity="center"
-        android:textColor="@android:color/white" />
+        android:textColor="@color/textColor" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark">
+        android:layout_height="161dp"
+        android:background="@color/background">
 
         <TextView
             android:id="@+id/textSpent"
@@ -29,7 +29,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/totalSpent"
-            android:textColor="@color/textPrimary"
+            android:textColor="@color/textColor"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textEarned" />
@@ -41,7 +41,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/totlaEarned"
-            android:textColor="@color/textPrimary"
+            android:textColor="@color/textColor"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textColor="@color/textPrimary"
+            android:textColor="@color/textColor"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.195"
@@ -59,16 +59,79 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/r3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            android:text="p."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="@+id/textEarnedAmount"
+            app:layout_constraintStart_toEndOf="@+id/textEarnedAmount"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/textSpentAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textColor="@color/textPrimary"
+            android:textColor="@color/textColor"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.169"
             app:layout_constraintStart_toEndOf="@+id/textSpent"
             app:layout_constraintTop_toBottomOf="@+id/textEarnedAmount" />
+
+        <TextView
+            android:id="@+id/r2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            android:text="p."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="@+id/textSpentAmount"
+            app:layout_constraintStart_toEndOf="@+id/textSpentAmount"
+            app:layout_constraintTop_toBottomOf="@+id/r3" />
+
+        <TextView
+            android:id="@+id/textSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="98dp"
+            android:text="Баланс:"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textSumAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55sp"
+            android:textColor="@color/colorAccent_green"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toEndOf="@+id/textSpent"
+            app:layout_constraintTop_toBottomOf="@+id/textEarnedAmount" />
+
+        <TextView
+            android:id="@+id/r1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorAccent_green"
+            android:textSize="18sp"
+            android:text="p."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="@+id/textSumAmount"
+            app:layout_constraintStart_toEndOf="@+id/textSumAmount"
+            app:layout_constraintTop_toBottomOf="@+id/r2" />
     </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

@@ -2,7 +2,9 @@ package com.example.renatgasanov.financepro;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,11 +27,48 @@ public class AboutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+        //скрыть панель навигации начало
+
+        final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+
+        getWindow().getDecorView().setSystemUiVisibility(flags);
+
+        final View decorView = getWindow().getDecorView();
+        decorView
+                .setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener()
+                {
+
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility)
+                    {
+                        if((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0)
+                        {
+                            decorView.setSystemUiVisibility(flags);
+                        }
+                    }
+                });
+
+        //скрыть панель навигации конец
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_about);
-        getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimaryDark));
-        getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.header));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.header));
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.textHeader));
+        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.header));
+        toolbar.setTitle("Список транзакций");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button buttonDONE = findViewById(R.id.buttonDone);
         buttonDONE.setOnClickListener(done);
@@ -57,6 +96,16 @@ public class AboutActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        finish();
+        return true;
+    }
+
     private final View.OnClickListener done = new View.OnClickListener(){
         @Override
         public void onClick(View v){
@@ -85,4 +134,18 @@ public class AboutActivity extends AppCompatActivity {
             }
         }
     };
+
+    //отслеживание нажатий на экран
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus)
+    {
+        super.onWindowFocusChanged(hasFocus);
+        getWindow().getDecorView().setSystemUiVisibility( View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+    }
 }
